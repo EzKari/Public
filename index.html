@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajay Bahadur Shrestha - Portfolio</title>
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body, html {
+      height: 100%;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      flex: 1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border-radius: 0 0 50% 50% / 20%;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      opacity: 0.85;
+      letter-spacing: 0.05em;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Profile Image */
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin: 0 auto 1.5rem auto;
+      display: block;
+      background: #dbeafe;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #bfdbfe;
+    }
+
+    /* Sections */
+    section {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      margin-bottom: 3rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+    }
+    section h2 {
+      color: #1e40af;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+      font-size: 2rem;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Projects grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #e0e7ff;
+      padding: 1.5rem 1.25rem;
+      border-radius: 0.75rem;
+      box-shadow: inset 0 0 12px rgba(59,130,246,0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .project-card:hover {
+      background-color: #c7d2fe;
+      box-shadow: inset 0 0 15px rgba(59,130,246,0.6);
+    }
+    .project-card h3 {
+      margin-bottom: 0.6rem;
+      color: #1e3a8a;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .project-card p {
+      font-size: 1rem;
+      color: #374151;
+    }
+
+    /* Skills badges */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .skill-badge {
+      background: #3b82f6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(59,130,246,0.4);
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .skill-badge:hover {
+      background: #2563eb;
+    }
+
+    /* Contact styling */
+    section.contact p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    section.contact a {
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 8px rgba(37, 99, 235, 0.4);
+      user-select: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.25rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+      .social-links a {
+        font-size: 1.5rem;
+      }
+      .profile-pic {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+  <!-- Social icons (SVG) inline -->
+</head>
+<body>
+
+  <header>
+    <img class="profile-pic" src="WhatsApp Image 2025-08-07 at 13.35.24_758425e8.jpg" alt="Ajay Bahadur Shrestha" />
+    <h1>Ajay Bahadur Shrestha</h1>
+    <p>Frontend Developer | Designer</p>
+
+    <div class="social-links" aria-label="Social media links">
+      <a href="https://github.com/EzKari" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+        <svg height="28" width="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .297a12 12 0 0 0-3.793 23.41c.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.39-1.334-1.76-1.334-1.76-1.09-.745.084-.73.084-.73 1.205.086 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.485.995.107-.774.418-1.3.76-1.6-2.665-.3-5.467-1.33-5.467-5.93 0-1.31.468-2.38 1.236-3.22-.124-.302-.536-1.52.117-3.17 0 0 1.008-.32 3.3 1.23a11.5 11.5 0 0 1 3-.405 11.5 11.5 0 0 1 3 .405c2.292-1.55 3.3-1.23 3.3-1.23.655 1.65.243 2.87.12 3.17.77.84 1.235 1.91 1.235 3.22 0 4.61-2.8 5.625-5.475 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.215.7.825.58A12 12 0 0 0 12 .297"></path>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/ajay-shrestha-67b37b33a/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+        <svg height="28" width="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.4c-1 0-1.8-.8-1.8-1.8 0-1 .8-1.8 1.8-1.8 1 0 1.8.8 1.8 1.8 0 1-.8 1.8-1.8 1.8zm13.5 11.4h-3v-5.6c0-1.4-1-1.6-1-1.6-.6 0-1 .4-1 1.6v5.6h-3v-10h3v1.4c.4-.8 1.7-1.6 3.4-1.6 2.5 0 3 1.6 3 3.8v6.4z"/>
+        </svg>
+      </a>
+      <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+        <svg height="28" width="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23 3a10.9 10.9 0 0 1-3.14.86A4.48 4.48 0 0 0 22.4.36a9.1 9.1 0 0 1-2.88 1.1 4.52 4.52 0 0 0-7.72 4.12A12.84 12.84 0 0 1 1.64 2.15 4.48 4.48 0 0 0 3 7.71a4.48 4.48 0 0 1-2-.56v.06a4.5 4.5 0 0 0 3.63 4.4 4.47 4.47 0 0 1-2 .07 4.51 4.51 0 0 0 4.22 3.13 9.06 9.06 0 0 1-5.6 1.92A9.1 9.1 0 0 1 1 16.7a12.8 12.8 0 0 0 6.92 2.03c8.3 0 12.85-6.87 12.85-12.83 0-.2 0-.42-.02-.62A9.22 9.22 0 0 0 23 3z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>Hello! I'm Ajay, passionate about creating clean and user-friendly websites. I specialize in frontend development and enjoy turning designs into functional web pages.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills" aria-label="Skills">
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">Tailwind CSS</span>
+        <span class="skill-badge">Git</span>
+        <span class="skill-badge">ArcGIS</span>
+        <span class="skill-badge">Autocad</span>
+        <span class="skill-badge">ENVI</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Personal Portfolio</h3>
+          <p>A responsive portfolio site showcasing my projects and skills.</p>
+        </div>
+        <div class="project-card">
+          <h3>Simple Blog</h3>
+          <p>A clean blog template built with HTML and CSS.</p>
+        </div>
+        <div class="project-card">
+          <h3>Weather App</h3>
+          <p>A JavaScript app that shows current weather data for any location.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email me at: <a href="mailto:blackthunder9849017451@gmail.com">blackthunder9849017451@gmail.com</a></p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Ajay Bahadur Shrestha. All rights reserved.
+  </footer>
+
+</body>
+</html>
